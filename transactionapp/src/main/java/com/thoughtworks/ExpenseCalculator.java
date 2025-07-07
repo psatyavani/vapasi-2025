@@ -1,12 +1,14 @@
 package com.thoughtworks;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 public class ExpenseCalculator {
+    private static final Logger logger = Logger.getLogger(ExpenseCalculator.class.getName());
 
     public Map<String, Map<String, Integer>> calculatePayments(List<Expense> expenses) {
         Map<String, Map<String, Integer>> result = new HashMap<>();
-
+        logger.info("Performing calculation of transactions inside calculatePayments function ");
         for (Expense exp : expenses) {
             String payer = exp.getPayer();
             int totalAmount = exp.getAmount();
@@ -21,7 +23,7 @@ public class ExpenseCalculator {
                 }
             }
         }
-
+        logger.info("Transaction details captured into HashMap result"+result);
         return result;
     }
 }

@@ -7,6 +7,7 @@ public class Expense {
     private final int amount;
     private final List<String> beneficiaries;
 
+
     public Expense(String payer, int amount, List<String> beneficiaries) {
         this.payer = payer;
         this.amount = amount;
@@ -23,5 +24,14 @@ public class Expense {
 
     public List<String> getBeneficiaries() {
         return beneficiaries;
+    }
+
+    @Override
+    public String toString() {
+        return "Expense{" +
+                "payer='" + payer + '\'' +
+                ", amount=" + amount +
+                ", beneficiaries=" + beneficiaries +
+                '}';
     }
 }
